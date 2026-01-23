@@ -6,29 +6,42 @@ function App() {
   function increasecount() {
     setCount(count + 1);
   }
+  function decreasecount(){
+    setCount(count - 1);
+  }
+  function resetcount (){
+    setCount(0)
+  }
 
-  useEffect(function () {
-    let clock = setInterval(function () {
-
-      setCount(count => count + 1);
-    }, 1000);
-    
-    return function(){
-      clearInterval(clock)
-    }
-  }, []);
+  useEffect(function(){
+    setInterval(function(){
+      setCount(c => c+1)
+    },1000)
+  },[]);
 
   return (
     <div className="text-center text-2xl mt-10">
-      <h3>{count}</h3>
-      <div className="flex gap-2 justify-center">
+      <h1>{count}</h1>
+      <br />
+      <div className="flex gap-1 justify-center text-sm">
         <button
           onClick={increasecount}
           className="hover:cursor-pointer border p-1"
         >
           increase count
         </button>
-        <br />
+        <button
+          onClick={decreasecount}
+          className="hover:cursor-pointer border p-1"
+        >
+          decrease count
+         </button> 
+        <button
+          onClick={resetcount}
+          className="hover:cursor-pointer border p-1"
+        >
+          reset count
+         </button> 
       </div>
     </div>
   );
