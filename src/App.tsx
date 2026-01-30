@@ -20,29 +20,11 @@ function App() {
   },[]);
 
   return (
-    <div className="text-center text-2xl mt-10">
-      <h1>{count}</h1>
-      <br />
-      <div className="flex gap-1 justify-center text-sm">
-        <button
-          onClick={increasecount}
-          className="hover:cursor-pointer border p-1"
-        >
-          increase count
-        </button>
-        <button
-          onClick={decreasecount}
-          className="hover:cursor-pointer border p-1"
-        >
-          decrease count
-         </button> 
-        <button
-          onClick={resetcount}
-          className="hover:cursor-pointer border p-1"
-        >
-          reset count
-         </button> 
-      </div>
+    <div className="bg-amber-500">
+   
+
+<h2 className="text-2xl text-black font-bold font-serif animate-pulse"> Hello World  </h2>
+
     </div>
   );
 }
