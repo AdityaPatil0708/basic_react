@@ -1,50 +1,10 @@
-import { useEffect, useState } from "react";
+import Card from "./components/Card";
 
-function App() {
-  const [count, setCount] = useState(0);
-
-  function increasecount() {
-    setCount(count + 1);
-  }
-  function decreasecount(){
-    setCount(count - 1);
-  }
-  function resetcount (){
-    setCount(0)
-  }
-
-  useEffect(function(){
-    setInterval(function(){
-      setCount(c => c+1)
-    },1000)
-  },[]);
-
-  return (
-    <div className="text-center text-2xl mt-10">
-      <h1>{count}</h1>
-      <br />
-      <div className="flex gap-1 justify-center text-sm">
-        <button
-          onClick={increasecount}
-          className="hover:cursor-pointer border p-1"
-        >
-          increase count
-        </button>
-        <button
-          onClick={decreasecount}
-          className="hover:cursor-pointer border p-1"
-        >
-          decrease count
-         </button> 
-        <button
-          onClick={resetcount}
-          className="hover:cursor-pointer border p-1"
-        >
-          reset count
-         </button> 
-      </div>
+export default function App() {
+  return(
+    <div className="flex flex-row gap-5 justify-center">
+      <Card imageSrc="./vite.svg" testimonial="Thank you, Classbot, for providing and affordable application with excellent student data management and fee management features for our coaching institute!" name="Aditya Patil" role="Web Developer"/>
+      <Card imageSrc="./vite.svg" testimonial="Thank you, Classbot, for providing and affordable application with excellent student data management and fee management features for our coaching institute!" name="Aditya Patil" role="Data Analyst"/>
     </div>
-  );
+  )
 }
-
-export default App
